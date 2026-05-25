@@ -1,0 +1,13 @@
+<!DOCTYPE html><html lang="pt-BR" xmlns:th="http://www.thymeleaf.org"><head th:replace="~{layout :: head('Catalogo Retro')}"></head>
+<body class="retro-bg"><nav th:replace="~{layout :: nav}"></nav>
+<main class="container py-4">
+<section class="hero-retro mb-4"><h1>Catalogo de Jogos Retro</h1><p>Classicos de console com visual neon e nostalgia pura.</p></section>
+<div th:if="${mensagem}" class="alert alert-info" th:text="${mensagem}"></div>
+<a th:href="@{/verCarrinho}" class="btn btn-retro">Ver Carrinho (<span th:text="${qtdCarrinho}">0</span>)</a>
+<section class="catalog-grid mt-4">
+<article class="game-card" th:each="item : ${itens}">
+    <a th:href="@{/detalhe/{id}(id=${item.id})}" class="game-image-wrap"><img th:src="${item.imageUrl != null ? item.imageUrl : '/img/retro-1.svg'}" class="game-image"></a>
+    <div class="game-body"><a class="game-title" th:href="@{/detalhe/{id}(id=${item.id})}" th:text="${item.title}"></a><p class="game-price">R$ <span th:text="${#numbers.formatDecimal(item.price,1,2)}"></span></p><a class="btn btn-sm btn-retro w-100" th:href="@{/adicionarCarrinho(id=${item.id})}">Adicionar ao carrinho</a></div>
+</article>
+</section></main>
+<footer th:replace="~{layout :: footer}"></footer></body></html>

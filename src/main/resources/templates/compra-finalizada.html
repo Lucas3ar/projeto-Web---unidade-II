@@ -1,0 +1,3 @@
+<!DOCTYPE html><html lang="pt-BR" xmlns:th="http://www.thymeleaf.org"><head th:replace="~{layout :: head('Compra Finalizada')}"></head><body class="retro-bg"><nav th:replace="~{layout :: nav}"></nav>
+<main class="container py-5"><div class="card card-retro p-4 text-center"><h2 th:text="${mensagem}">Obrigado pela compra!</h2><p>Sua jornada retro continua. Volte sempre para novas reliquias.</p><a class="btn btn-retro" th:href="@{/index}">Voltar ao catalogo</a></div></main>
+<footer th:replace="~{layout :: footer}"></footer></body></html>

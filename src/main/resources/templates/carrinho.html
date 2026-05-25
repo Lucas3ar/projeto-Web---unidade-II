@@ -1,0 +1,7 @@
+<!DOCTYPE html><html lang="pt-BR" xmlns:th="http://www.thymeleaf.org"><head th:replace="~{layout :: head('Carrinho')}"></head><body><nav th:replace="~{layout :: nav}"></nav>
+<main class="container py-4"><div class="card card-retro p-4"><h2>Itens no carrinho</h2><p>Total de itens: <b class="cart-count-highlight" th:text="${#lists.size(itens)}">0</b></p>
+<div class="table-responsive"><table class="table table-retro"><tr><th>Imagem</th><th>Titulo</th><th>Plataforma</th><th>Preco</th><th></th></tr>
+<tr th:each="item : ${itens}"><td><img th:src="${item.imageUrl != null ? item.imageUrl : '/img/retro-1.svg'}" width="90"></td><td th:text="${item.title}"></td><td th:text="${item.platform}"></td><td th:text="${#numbers.formatDecimal(item.price,1,2)}"></td><td><a class="btn btn-sm btn-remover" th:href="@{/removerCarrinho(id=${item.id})}">Remover</a></td></tr></table></div>
+<div class="cart-total-highlight mt-3">Valor total do carrinho: R$ <span th:text="${#numbers.formatDecimal(totalCarrinho,1,2)}">0,00</span></div>
+<div class="d-flex gap-2"><a class="btn btn-retro-outline" th:href="@{/index}">Continuar comprando</a><a class="btn btn-retro" th:href="@{/finalizarCompra}">Finalizar Compra</a></div></div></main>
+<footer th:replace="~{layout :: footer}"></footer></body></html>

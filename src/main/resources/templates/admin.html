@@ -1,0 +1,4 @@
+<!DOCTYPE html><html lang="pt-BR" xmlns:th="http://www.thymeleaf.org"><head th:replace="~{layout :: head('Admin')}"></head><body><nav th:replace="~{layout :: nav}"></nav>
+<main class="container py-4"><div th:if="${mensagem}" class="alert alert-success" th:text="${mensagem}"></div><a class="btn btn-retro" th:href="@{/cadastro}">Novo Item</a>
+<div class="table-responsive"><table class="table table-retro mt-3"><tr><th>ID</th><th>Titulo</th><th>Deletado?</th><th>Acoes</th></tr><tr th:each="item : ${itens}"><td th:text="${item.id}"></td><td th:text="${item.title}"></td><td th:text="${item.isDeleted}"></td><td><a th:href="@{/editar(id=${item.id})}">Editar</a> | <a th:href="@{/deletar(id=${item.id})}">Deletar</a> | <a th:href="@{/restaurar(id=${item.id})}">Restaurar</a></td></tr></table></div></main>
+<footer th:replace="~{layout :: footer}"></footer></body></html>
