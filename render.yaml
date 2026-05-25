@@ -6,10 +6,18 @@ services:
     autoDeploy: true
     healthCheckPath: /
     envVars:
-      - key: DB_URL
+      - key: DB_HOST
         fromDatabase:
           name: retro-games-db
-          property: connectionString
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: retro-games-db
+          property: port
+      - key: DB_NAME
+        fromDatabase:
+          name: retro-games-db
+          property: database
       - key: DB_USER
         fromDatabase:
           name: retro-games-db
