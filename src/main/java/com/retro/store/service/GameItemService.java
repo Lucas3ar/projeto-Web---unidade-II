@@ -31,6 +31,7 @@ public class GameItemService {
         GameItem item = form.getId() != null ? buscarPorId(form.getId()) : new GameItem();
         item.setTitle(form.getTitle()); item.setPlatform(form.getPlatform()); item.setGenre(form.getGenre());
         item.setSkuCode(form.getSkuCode()); item.setDescription(form.getDescription()); item.setPrice(form.getPrice());
+        item.setImageUrl(form.getImageUrl());
         if (item.getImageUrl() == null || item.getImageUrl().isBlank()) item.setImageUrl(imageAleatoria());
         return repository.save(item);
     }

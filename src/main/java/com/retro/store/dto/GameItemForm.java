@@ -29,4 +29,6 @@ public class GameItemForm {
     @NotNull(message = "Preco e obrigatorio")
     @Positive(message = "Preco deve ser positivo")
     private Double price;
+
+    private String imageUrl;
 }
