@@ -196,6 +196,10 @@ h2 {
   margin-bottom: 0.7rem;
 }
 
+.game-description {
+  color: #e2e8f0;
+}
+
 /* Cart */
 .cart-total-highlight {
   background: linear-gradient(135deg, #f59e0b, #f97316);

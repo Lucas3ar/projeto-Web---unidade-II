@@ -1,3 +1,3 @@
 <!DOCTYPE html><html lang="pt-BR" xmlns:th="http://www.thymeleaf.org"><head th:replace="~{layout :: head('Detalhe')}"></head><body><nav th:replace="~{layout :: nav}"></nav>
-<main class="container py-4"><div class="card card-retro p-4"><h2 th:text="${item.title}"></h2><img class="mb-3" th:src="${item.imageUrl != null ? item.imageUrl : '/img/retro-1.svg'}" width="240"><p th:text="${item.description}"></p><p><b>Plataforma:</b> <span th:text="${item.platform}"></span></p></div></main>
+<main class="container py-4"><div class="card card-retro p-4"><h2 th:text="${item.title}"></h2><img class="mb-3" th:src="${item.imageUrl != null ? item.imageUrl : '/img/retro-1.svg'}" width="240"><p class="game-description" th:text="${item.description}"></p><p><b>Plataforma:</b> <span th:text="${item.platform}"></span></p></div></main>
 <footer th:replace="~{layout :: footer}"></footer></body></html>
